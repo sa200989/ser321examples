@@ -1,27 +1,25 @@
-// set as java application
+// Apply the java application plugin
 apply plugin: 'application'
 
-//define main class
-mainClassName = 'SimpleServer'
+// Define the main class for the application plugin
+mainClassName = 'funHttpServer.WebServer'
 
+// Task to run the SimpleWebServer
 task SimpleWebServer(type: JavaExec) {
-  group 'http'
-  description 'Simple Http Demo'
+  group = 'http'
+  description = 'Simple Http Demo'
 
   classpath = sourceSets.main.runtimeClasspath
-
   main = 'httpServer.WebServer'
   standardInput = System.in
 }
 
+// Task to run the FunWebServer
 task FunWebServer(type: JavaExec) {
-  group 'http'
-  description 'Simple Http Demo'
+  group = 'http'
+  description = 'Simple Http Demo'
 
   classpath = sourceSets.main.runtimeClasspath
-
   main = 'funHttpServer.WebServer'
   standardInput = System.in
 }
-
-
